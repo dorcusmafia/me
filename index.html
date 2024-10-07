@@ -3,145 +3,286 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8" />
-<meta name="description" content="Looking for my resume? Look no further." />
-    <link rel="icon" href="me_icon.webp" type="image/png" sizes="100x100">
-<title>Brandon Swanson - Systems Administrator</title>
+<meta name="description" content="Brandon Swanson - Systems Administrator">
+<link rel="icon" href="me_icon.webp" type="image/webp" sizes="100x100">
+<title>Brandon Swanson | Systems Administrator</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
 
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #2c3e50;
+    --accent-color: #4CAF50;
+    --secondary-color: #e8f5e9;
+    --tertiary-color: #c8e6c9;
+    --card-bg: #ffffff;
+    --name-color: #000000;
+    --job-title-color: #434343;
+    --about-text-color: #000000;
+  }
 
   body {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Lexend', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  body.light-mode {
-    background-color: white;
-    color: black;
-  }
-  body.dark-mode {
-    background-color: #1f1f1f;
-    color: white;
-  }
-  .header {
-    font-weight: 900;
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
-  .white-text {
-    color: #fff;
-  }
-  .content {
-    font-weight: 400;
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 3rem;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  body .content {
-    background-color: ##EEEEEE;
+    transition: all 0.3s ease;
   }
 
-  body.dark-mode .content {
-    background-color: #2a2a2a;
-  }
-
-  .intro {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    font-family: 'Inter', Arial, sans-serif;
-  }
-  .profile-pic {
-    max-width: 200px;
-    border-radius: 50%;
+  .container {
+    max-width: 1200px;
     margin: 0 auto;
-    display: block;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
   }
-  .links {
+
+  header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    padding: 2rem 0;
   }
-  .link-button {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+
+  .theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+    transition: fill 0.3s ease;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    background-color: var(--secondary-color);
+    padding: 3rem;
+    border-radius: 10px;
+  }
+
+  .hero-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-content {
+    flex: 1;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem;
+    color: var(--name-color);
+    font-weight: 700;
+  }
+
+  .hero-content h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--job-title-color);
+    margin: 0 0 1rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #45a049;
+  }
+
+  .about-section {
+    background-color: var(--tertiary-color);
+    padding: 3rem;
+    margin: 4rem 0;
+    border-radius: 10px;
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--about-text-color);
+  }
+
+  .about-content h2 {
+    font-weight: 600;
+    color: var(--accent-color);
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .skill-tag {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  footer {
     text-align: center;
-  }
-  .dark-mode-toggle {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    cursor: pointer;
+    padding: 2rem 0;
+    color: var(--text-color);
   }
 
-  .center-bold {
-    font-weight: 900;
-    text-align: center;
-  }
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
 
-  .email-link {
-    color: #000;
-    transition: color 0.3s;
-  }
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      gap: 1rem;
+    }
 
-  body.dark-mode .email-link {
-    color: #fff;
+    .cta-buttons {
+      justify-content: center;
+    }
+
+    .about-section {
+      margin: 2rem 0;
+    }
   }
 </style>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const body = document.body;
-    const darkModeToggle = document.querySelector(".dark-mode-toggle");
-    const darkModeIcon = document.createElement("span");
-    darkModeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><path d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26 c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg>';
-
-    function toggleDarkMode() {
-      body.classList.toggle("dark-mode");
-      if (body.classList.contains("dark-mode")) {
-        darkModeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><path fill="#BDBDBD" d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26 c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg>';
-      } else {
-        darkModeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><path fill="#BDBDBD" d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41 l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg>';
-      }
-    }
-
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      toggleDarkMode();
-    }
-
-    darkModeToggle.addEventListener("click", toggleDarkMode);
-    darkModeToggle.appendChild(darkModeIcon);
-  });
-</script>
 </head>
 <body>
-<div class="header">
-  <h1 class="white-text">Brandon Swanson</h1>
-  <h2 class="white-text">Systems Administrator from <a href="https://goo.gl/maps/nyaXvHXAwP6w2Ev76" class="white-text">Lodi, NY</a></h2>
+<div class="container">
+  <header>
+    <div class="logo">BS</div>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+      </svg>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="https://bswanson.xyz/me.png" alt="Brandon Swanson" class="hero-image">
+      <div class="hero-content">
+        <h1>Brandon Swanson</h1>
+        <h2>Systems Administrator</h2>
+        <div class="cta-buttons">
+          <a href="https://bswanson.xyz/resume/" class="cta-button" target="_blank">View Resume</a>
+          <a href="mailto:b@bswanson.xyz" class="cta-button">Contact Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="about-section">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>
+        I'm a results-driven IT Professional based in the Finger Lakes Region of Upstate New York, combining technical expertise with excellent communication skills. My problem-solving abilities and meticulous approach enable me to streamline user experiences in the rapidly changing world of technology.
+      </p>
+      <div class="skills">
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">Active Directory</span>
+        <span class="skill-tag">Troubleshooting</span>
+        <span class="skill-tag">System Administration</span>
+        <span class="skill-tag">Network Security</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Brandon Swanson. All rights reserved.</p>
+  </footer>
 </div>
-<div class="dark-mode-toggle"></div>
-<div class="content">
-  <img class="profile-pic" src="https://bswanson.xyz/me.png" alt="A photo of Brandon">
-  <div class="intro">
-    <p>Hi there! I'm a dedicated IT Professional with a strong focus on polished performance and effective communication. My knack for troubleshooting and my attention to detail have allowed me to create smoother pathways for users to navigate the ever-evolving tech landscape. With skills ranging from <span class="skills">Linux</span> to <span class="skills">Active Directory</span>, I'm equipped to handle various IT challenges and contribute to your team's success.</p>
-    <p class="center-bold">Let's get in touch!</p>
-  </div>
-  <div class="links">
-    <a class="link-button" href="https://bswanson.xyz/resume/" target="_blank">View Resume</a>
-    <a class="link-button" href="https://www.linkedin.com/in/bswansonny/" target="_blank">LinkedIn</a>
-    <a class="email-link" href="mailto:b@bswanson.xyz">b@bswanson.xyz</a>
-  </div>
-</div>
+
+<script>
+function toggleTheme() {
+  const body = document.body;
+  const themeToggle = document.querySelector('.theme-toggle svg');
+  body.classList.toggle('dark-mode');
+  updateTheme();
+}
+
+function updateTheme() {
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  const root = document.documentElement;
+  const themeToggle = document.querySelector('.theme-toggle svg');
+
+  if (isDarkMode) {
+    root.style.setProperty('--bg-color', '#1a1a1a');
+    root.style.setProperty('--text-color', '#e0e0e0');
+    root.style.setProperty('--accent-color', '#66BB6A');
+    root.style.setProperty('--secondary-color', '#1e3320');
+    root.style.setProperty('--tertiary-color', '#2c4a3e');
+    root.style.setProperty('--card-bg', '#2c2c2c');
+    root.style.setProperty('--name-color', '#ffffff');
+    root.style.setProperty('--job-title-color', '#cccccc');
+    root.style.setProperty('--about-text-color', '#ffffff');
+    themeToggle.innerHTML = `
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+    `;
+  } else {
+    root.style.setProperty('--bg-color', '#ffffff');
+    root.style.setProperty('--text-color', '#2c3e50');
+    root.style.setProperty('--accent-color', '#4CAF50');
+    root.style.setProperty('--secondary-color', '#e8f5e9');
+    root.style.setProperty('--tertiary-color', '#c8e6c9');
+    root.style.setProperty('--card-bg', '#ffffff');
+    root.style.setProperty('--name-color', '#000000');
+    root.style.setProperty('--job-title-color', '#434343');
+    root.style.setProperty('--about-text-color', '#000000');
+    themeToggle.innerHTML = `
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+    `;
+  }
+}
+
+// Check for user's preferred color scheme
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.body.classList.add('dark-mode');
+  updateTheme();
+}
+</script>
 </body>
 </html>
